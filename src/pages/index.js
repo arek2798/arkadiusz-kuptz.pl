@@ -1,12 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import Header from '../components/organisms/Header/Header';
+
 
 const IndexPage = () => (
   <>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <Header />
   </>
 )
+
+
+
 
 export default IndexPage
