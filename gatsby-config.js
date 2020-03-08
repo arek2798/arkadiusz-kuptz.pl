@@ -23,12 +23,12 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
-            // subsets: [`latin extended`],
+            subsets: [`latin-ext`],
             variants: ['400', '500', '700']
           },
           {
             family: `Poppins`,
-            // subsets: [`latin extended`],
+            subsets: [`latin-ext`],
             variants: ['400', '500', '700']
           },
         ],
