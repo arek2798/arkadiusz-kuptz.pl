@@ -25,6 +25,12 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Poppins';
     }
 
+    input, textarea {
+        font-family: 'Roboto';
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
     ul {
         padding: 0;
         margin: 0;

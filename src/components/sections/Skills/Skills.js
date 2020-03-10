@@ -18,7 +18,7 @@ const SkillsWrapper = styled.div`
 `
 
 const Skills = () => (
-    <Wrapper>
+    <Wrapper className="skills">
         <SectionHeader title="Umiejętności" subtitle="UŻYWANE TECHNOLOGIE" />
         <SkillsWrapper>
             <SkillBox

@@ -13,7 +13,7 @@ const AboutStyled = styled.section`
 `
 
 const About = () => (
-    <AboutStyled>
+    <AboutStyled className="about">
         <AboutImg />
         <AboutInfo />
     </AboutStyled>

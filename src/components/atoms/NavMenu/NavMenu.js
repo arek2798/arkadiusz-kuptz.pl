@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const NavList = styled.ul`
     list-style: none;
@@ -41,11 +42,11 @@ const NavItem = styled.li`
 
 const NavMenu = () => (
     <NavList>
-        <NavItem>Strona główna</NavItem>
-        <NavItem>O mnie</NavItem>
-        <NavItem>Co umiem</NavItem>
-        <NavItem>Portfolio</NavItem>
-        <NavItem>Kontakt</NavItem>
+        <NavItem onClick={() => scrollTo('.main')}> Strona główna</NavItem>
+        <NavItem onClick={() => scrollTo('.about')}> O mnie</NavItem>
+        <NavItem onClick={() => scrollTo('.skills')}> Co umiem</NavItem>
+        <NavItem onClick={() => scrollTo('.portfolio')}> Portfolio</NavItem>
+        <NavItem onClick={() => scrollTo('.contact')}> Kontakt</NavItem>
     </NavList>
 );
 

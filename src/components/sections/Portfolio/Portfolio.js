@@ -34,7 +34,7 @@ const FieldsWrapper = styled.div`
 
 class Portfolio extends React.Component {
     state = {
-        activeFilter: "aplikacja"
+        activeFilter: "wszystko"
     }
 
     works = [
@@ -72,7 +72,7 @@ class Portfolio extends React.Component {
         const activeWorks = this.works.filter(work => work.type === activeFilter || activeFilter === "wszystko");
 
         return (
-            <Wrapper>
+            <Wrapper className="portfolio">
                 <SectionHeader title="Portfolio" subtitle="WYKONANE PRACE" />
                 <Filter>
                     <Item active={activeFilter === "wszystko" ? true : false} onClick={() => this.handleFilter("wszystko")}>Wszystko</Item>

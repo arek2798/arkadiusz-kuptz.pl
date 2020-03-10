@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -85,6 +86,7 @@ const Arrows = styled.div`
     width: 20px;
     bottom: 10px;
     left: 50%;
+    cursor: pointer;
     animation: ${jump} 2s infinite;
 `
 
@@ -114,7 +116,7 @@ const Header = () => {
     const data = useStaticQuery(query)
     const { header, person } = data;
     return (
-        <StyledHeader bgimage={header.childImageSharp.fluid.src} >
+        <StyledHeader bgimage={header.childImageSharp.fluid.src} className="main">
             <HeaderContent >
                 <img src={person.childImageSharp.fixed.src} alt="" />
                 <Author>
@@ -133,7 +135,7 @@ const Header = () => {
                     </svg>
                 </Social>
             </HeaderContent>
-            <Arrows>
+            <Arrows onClick={() => scrollTo('.about')}>
                 <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.93745 13.0187L0.437451 4.51875C-0.150049 3.93125 -0.150049 2.98125 0.437451 2.4L1.84995 0.9875C2.43745 0.4 3.38745 0.4 3.9687 0.9875L9.99369 7.0125L16.0187 0.9875C16.6062 0.4 17.5562 0.4 18.1374 0.9875L19.5624 2.39375C20.1499 2.98125 20.1499 3.93125 19.5624 4.5125L11.0624 13.0125C10.4749 13.6063 9.52495 13.6062 8.93745 13.0187ZM11.0624 25.0187L19.5624 16.5187C20.1499 15.9312 20.1499 14.9812 19.5624 14.4L18.1499 12.9875C17.5624 12.4 16.6124 12.4 16.0312 12.9875L9.99994 19.0063L3.97495 12.9812C3.38745 12.3937 2.43745 12.3937 1.8562 12.9812L0.437451 14.3937C-0.150049 14.9812 -0.150049 15.9313 0.437451 16.5125L8.93745 25.0125C9.52495 25.6063 10.4749 25.6062 11.0624 25.0187Z" fill="white" />
                 </svg>
