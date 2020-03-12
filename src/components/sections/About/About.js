@@ -10,6 +10,7 @@ const AboutStyled = styled.section`
     padding: 80px 0;
     display: flex;
     justify-content: space-between;
+    overflow-x: hidden;
 `
 
 const About = () => (

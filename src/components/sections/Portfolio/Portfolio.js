@@ -27,9 +27,13 @@ const Item = styled.p`
 const FieldsWrapper = styled.div`
     padding: 60px 0;
     display: grid;
-    grid-template-columns: repeat(3, calc((100% - 90px) / 3));
-    grid-column-gap: 45px;
-    grid-row-gap: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 1170px) {
+        justify-content: space-around;
+    }
 `
 
 class Portfolio extends React.Component {

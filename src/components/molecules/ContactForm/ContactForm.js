@@ -7,16 +7,19 @@ const Form = styled.form`
     grid-template-rows: repeat(2, max-content);
     grid-row-gap: 25px;
     justify-items: center;
+    max-width: 600px;
+    padding: 0 10px;
+    margin: auto;
 `
 const Input = styled.input`
-    width: 580px;
+    width: 100%;
     height: 40px;
     border: 1px solid #888888;
     background: #FFFFFF;
     padding: 8px 14px;
 `
 const Textarea = styled.textarea`
-    width: 580px;
+    width: 100%;
     height: 210px;
     border: 1px solid #888888;
     background: #FFFFFF;

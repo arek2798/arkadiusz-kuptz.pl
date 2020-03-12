@@ -14,7 +14,8 @@ const NavWrapper = styled.nav`
 `
 
 const PageWrapper = styled.div`
-    max-width: 1170px;
+    max-width: 1200px;
+    padding: 0 15px;
     height: 82px;
     margin: auto;
     display: flex;

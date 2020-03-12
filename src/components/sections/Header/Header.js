@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
 `
 
 const HeaderContent = styled.div`

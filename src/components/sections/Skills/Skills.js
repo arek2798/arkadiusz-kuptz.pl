@@ -11,10 +11,17 @@ const SkillsWrapper = styled.div`
     max-width: 1170px;
     margin: auto;
     padding: 30px 0;
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, calc((100% - 120px) / 3));
     grid-column-gap: 60px;
-    grid-row-gap: 60px;
+    grid-row-gap: 60px; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 1170px) {
+        justify-content: space-around;
+    }
 `
 
 const Skills = () => (
@@ -48,7 +55,7 @@ const Skills = () => (
                 </svg>
                 }
                 title="React"
-                description="interaktywne aplikacje webowe oparte na komponentach, ktore ułatwiają tworzyć złożony UI"
+                description="interaktywne aplikacje webowe oparte na komponentach, ktore ułatwiają tworzenie złożonego UI"
             />
             <SkillBox
                 svg={<svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
