@@ -30,11 +30,20 @@ const HeaderContent = styled.div`
 const Author = styled.div`
     color: #ffffff;
     text-align: center;
+    font-size: 10px;
+
+    @media (max-width: 450px) {
+        font-size: 8px;
+    }
+
+    @media (max-width: 365px) {
+        font-size: 7px;
+    }
 `
 
 const Name = styled.p`
     font-weight: 500;
-    font-size: 55px;
+    font-size: 5.5em;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 2.5px;
     line-height: 50px;
@@ -43,7 +52,7 @@ const Name = styled.p`
 
 const Position = styled.p`
     font-weight: 700;
-    font-size: 38px;
+    font-size: 3.8em;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
     line-height: 50px;

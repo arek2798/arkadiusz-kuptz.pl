@@ -8,6 +8,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 0 10px;
+    
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `
 const Title = styled.h2`
     font-family: 'Poppins';
@@ -16,6 +21,10 @@ const Title = styled.h2`
     letter-spacing: 2.5px;
     color: #FF7675;
     margin-bottom: 30px;
+
+    @media (max-width: 370px) {
+        font-size: 42px;
+    }
 `
 const FirstParagraph = styled.p`
     font-size: 20px;
@@ -28,6 +37,7 @@ const SecondParagraph = styled.p`
     color: #6F6F6F;
     line-height: 30px;
     text-align: justify;
+    margin-bottom: 20px;
 `
 
 const AboutInfo = () => (

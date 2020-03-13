@@ -11,6 +11,11 @@ const AboutStyled = styled.section`
     display: flex;
     justify-content: space-between;
     overflow-x: hidden;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const About = () => (

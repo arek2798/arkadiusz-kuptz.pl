@@ -29,7 +29,7 @@ const FieldsWrapper = styled.div`
     display: grid;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media (max-width: 1170px) {
         justify-content: space-around;

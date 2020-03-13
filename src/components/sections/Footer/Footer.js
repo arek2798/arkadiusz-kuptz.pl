@@ -36,6 +36,7 @@ const Social = styled.div`
 const Rights = styled.p`
     color: #FFFFFF; 
     letter-spacing: 1px;
+    text-align: center;
 `
 const Footer = () => (
     <Wrapper>
