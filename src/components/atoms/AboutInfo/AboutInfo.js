@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import Button from '../Button/Button';
 
@@ -40,15 +41,29 @@ const SecondParagraph = styled.p`
     margin-bottom: 20px;
 `
 
-const AboutInfo = () => (
-    <Wrapper>
-        <div>
-            <Title>Kim jestem ?</Title>
-            <FirstParagraph>Nazywam się Arkadiusz Kuptz. Jestem frontend developerem i studentem elektroniki na Politechnice Gdańskiej.</FirstParagraph>
-            <SecondParagraph>W wolnym czasie rozwijam swoję umiejętności związane z tworzeniem nowoczesnych aplikacji webowych. Jedną z głównych technologi na której opieram swój rozwój jest React.</SecondParagraph>
-        </div>
-        <Button>Pobierz CV</Button>
-    </Wrapper>
-)
+export const query = graphql`
+  {
+    allDatoCmsAboutMe {
+      nodes {
+        firstParagraph
+        secondParagraph
+      }
+    }
+  }
+`
 
+const AboutInfo = () => {
+    const data = useStaticQuery(query);
+
+    return (
+        <Wrapper>
+            <div>
+                <Title>Kim jestem ?</Title>
+                <FirstParagraph>{data.allDatoCmsAboutMe.nodes[0].firstParagraph}</FirstParagraph>
+                <SecondParagraph>{data.allDatoCmsAboutMe.nodes[0].secondParagraph}</SecondParagraph>
+            </div>
+            <Button>Pobierz CV</Button>
+        </Wrapper>
+    )
+}
 export default AboutInfo;

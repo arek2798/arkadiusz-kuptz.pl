@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionHeader from '../../atoms/SectionHeader/SectionHeader';
-import WorkField from '../../atoms/WorkField/WorkField';
+import ProjectsWrapper from '../../molecules/ProjectsWrapper/ProjectsWrapper';
 
 const Wrapper = styled.div`
     max-width: 1170px;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `
 const Filter = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(4, max-content);
     grid-column-gap: 30px;
     justify-content: center;
 `
@@ -24,46 +24,10 @@ const Item = styled.p`
         color: #FF7675;
     }
 `
-const FieldsWrapper = styled.div`
-    padding: 60px 0;
-    display: grid;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    @media (max-width: 1170px) {
-        justify-content: space-around;
-    }
-`
-
 class Portfolio extends React.Component {
     state = {
         activeFilter: "wszystko"
     }
-
-    works = [
-        {
-            id: 0,
-            type: "portfolio",
-            src: "portfolio.png",
-            title: "strona portfolio",
-            tech: "html / css / javascript / php"
-        },
-        {
-            id: 1,
-            type: "aplikacja",
-            src: "portfolio.png",
-            title: "aplikacja",
-            tech: "html / css / react"
-        },
-        {
-            id: 2,
-            type: "portfolio",
-            src: "portfolio.png",
-            title: "strona portfolio",
-            tech: "html / css / javascript / php"
-        },
-    ]
 
     handleFilter = (filter) => {
         this.setState({
@@ -73,19 +37,17 @@ class Portfolio extends React.Component {
 
     render() {
         const { activeFilter } = this.state;
-        const activeWorks = this.works.filter(work => work.type === activeFilter || activeFilter === "wszystko");
 
         return (
             <Wrapper className="portfolio">
                 <SectionHeader title="Portfolio" subtitle="WYKONANE PRACE" />
                 <Filter>
                     <Item active={activeFilter === "wszystko" ? true : false} onClick={() => this.handleFilter("wszystko")}>Wszystko</Item>
-                    <Item active={activeFilter === "portfolio" ? true : false} onClick={() => this.handleFilter("portfolio")}>Portfolio</Item>
-                    <Item active={activeFilter === "aplikacja" ? true : false} onClick={() => this.handleFilter("aplikacja")}>Aplikacje</Item>
+                    <Item active={activeFilter === "portfolio" ? true : false} onClick={() => this.handleFilter("portfolio")}>Strona portfolio</Item>
+                    <Item active={activeFilter === "aplikacja" ? true : false} onClick={() => this.handleFilter("aplikacja")}>Aplikacja webowa</Item>
+                    <Item active={activeFilter === "firmowa" ? true : false} onClick={() => this.handleFilter("firmowa")}>Strona firmowa</Item>
                 </Filter>
-                <FieldsWrapper>
-                    {activeWorks.map(work => <WorkField key={work.id} src={work.src} title={work.title} tech={work.tech} />)}
-                </FieldsWrapper>
+                <ProjectsWrapper activeFilter={this.state.activeFilter} />
             </Wrapper >
         )
     }

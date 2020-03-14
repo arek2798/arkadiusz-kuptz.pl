@@ -22,7 +22,8 @@ const Description = styled.p`
 
 const SkillBox = ({ svg, title, description }) => (
     <Wrapper>
-        {svg}
+        <img src={svg} alt="" />
+        {/* {svg} */}
         <Title>{title}</Title>
         <Description>{description}</Description>
     </Wrapper>

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const ImageStyled = styled.img`
     box-shadow: 35px 35px 0 #FF7675;
     margin-right: 40px;
+    margin-left:10px;
     
     @media (max-width: 1070px) {
       width: 300px;
@@ -17,12 +18,14 @@ const ImageStyled = styled.img`
 
 export const query = graphql`
   {
-    file(name: {eq: "about_img"}) {
-      childImageSharp {
-        fluid(maxHeight: 650, maxWidth: 430) {
-          src
-          srcSet
-          sizes
+    allDatoCmsAboutMe {
+      nodes {
+        aboutMeImage {
+          fluid(maxWidth: 430, maxHeight: 650) {
+            src
+            sizes
+            srcSet
+          }
         }
       }
     }
@@ -32,7 +35,7 @@ export const query = graphql`
 const AboutImg = () => {
   const data = useStaticQuery(query);
   return (
-    <ImageStyled src={data.file.childImageSharp.fluid.src} alt="" />
+    <ImageStyled src={data.allDatoCmsAboutMe.nodes[0].aboutMeImage.fluid.src} alt="" />
   )
 }
 
