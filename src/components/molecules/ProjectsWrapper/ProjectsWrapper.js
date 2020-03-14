@@ -25,11 +25,9 @@ export const query = graphql`
         link
         projectType
         thumb {
-          uploadId {
             fixed(height: 600, width: 700) {
-              src
+                src
             }
-          }
         }
       }
     }
