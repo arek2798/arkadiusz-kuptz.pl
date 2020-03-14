@@ -41,7 +41,7 @@ const ProjectsWrapper = ({ activeFilter }) => {
 
     return (
         <FieldsWrapper>
-            {activeWorks.map(work => <a href={work.link} target="_blank" rel="noopener noreferrer"><WorkField key={work.id} src={work.thumb.uploadId.fixed.src} title={work.projectTitle} tech={work.technologies} /></a>)}
+            {activeWorks.map(work => <a href={work.link} target="_blank" rel="noopener noreferrer"><WorkField key={work.id} src={work.thumb.fixed.src} title={work.projectTitle} tech={work.technologies} /></a>)}
         </FieldsWrapper >
     )
 }
