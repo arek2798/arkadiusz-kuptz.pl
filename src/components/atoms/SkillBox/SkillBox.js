@@ -8,6 +8,10 @@ const Wrapper = styled.div`
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     width: 350px;
     margin-bottom: 50px;
+
+    img {
+        height: 75px;
+    }
 `
 const Title = styled.p`
     font-family: 'Poppins';
