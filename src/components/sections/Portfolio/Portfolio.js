@@ -18,7 +18,7 @@ const Item = styled.p`
     cursor: pointer;
     transition: color 0.1s linear;
     color: ${({ active }) => active ? "#FF7675" : "#000000"};
-    margin: 0 10px;
+    margin: 10px 10px;
 
     &:hover {
         color: #FF7675;
