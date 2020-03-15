@@ -10,15 +10,15 @@ const Wrapper = styled.div`
     text-align: center;
 `
 const Filter = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, max-content);
-    grid-column-gap: 30px;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 `
 const Item = styled.p`
     cursor: pointer;
     transition: color 0.1s linear;
     color: ${({ active }) => active ? "#FF7675" : "#000000"};
+    margin: 0 10px;
 
     &:hover {
         color: #FF7675;
