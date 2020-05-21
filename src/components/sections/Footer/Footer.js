@@ -10,10 +10,12 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 `
+const Logo = styled.img`
+    height: 100px;
+`
 const Name = styled.p`
     font-size: 20px;
     color: #FFFFFF;
-    margin: 5px 0 0;
     letter-spacing: 1px;
 `
 const Social = styled.div`
@@ -53,7 +55,7 @@ const Footer = () => {
     const data = useStaticQuery(query);
     return (
         <Wrapper>
-            <img src={data.logo.publicURL} alt="Arkadiusz Kuptz logo" />
+            <Logo src={data.logo.publicURL} alt="Arkadiusz Kuptz logo" />
             <Name>Arkadiusz Kuptz</Name>
             <Social>
                 <a href="https://www.facebook.com/arkadiuszkuptz" target="_blank" rel="noopener noreferrer"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
