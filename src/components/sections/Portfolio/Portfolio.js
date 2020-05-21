@@ -17,11 +17,11 @@ const Filter = styled.div`
 const Item = styled.p`
     cursor: pointer;
     transition: color 0.1s linear;
-    color: ${({ active }) => active ? "#FF7675" : "#000000"};
+    color: ${({ active }) => active ? "#449EC6" : "#000000"};
     margin: 10px 10px;
 
     &:hover {
-        color: #FF7675;
+        color: #449EC6;
     }
 `
 class Portfolio extends React.Component {

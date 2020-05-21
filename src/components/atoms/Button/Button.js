@@ -4,8 +4,8 @@ const Button = styled.button`
     width: 180px;
     height: 50px;
     border: 2px solid;
-    border-color: ${({ disable }) => disable ? "6F6F6F" : "#FF7675"};
-    background: ${({ disable }) => disable ? "6F6F6F" : "#FF7675"};
+    border-color: ${({ disable }) => disable ? "6F6F6F" : "#449EC6"};
+    background: ${({ disable }) => disable ? "6F6F6F" : "#449EC6"};
     color: #FFFFFF;
     font-size: 16px;
     letter-spacing: 1px;
@@ -14,7 +14,7 @@ const Button = styled.button`
     ${({ disable }) => !disable && css`
     &:hover {
         background: #FFFFFF;
-        color: #FF7675
+        color: #449EC6
     }
     `}
 `

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h3`
-    color: #FF7675;
+    color: #449EC6;
     text-align: center;
 `
 

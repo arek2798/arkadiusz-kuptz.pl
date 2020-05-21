@@ -20,7 +20,7 @@ const Title = styled.h2`
     font-weight: 700;
     font-size: 48px;
     letter-spacing: 2.5px;
-    color: #FF7675;
+    color: #449EC6;
     margin-bottom: 30px;
 
     @media (max-width: 370px) {

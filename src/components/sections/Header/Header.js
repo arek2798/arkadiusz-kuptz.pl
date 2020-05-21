@@ -72,7 +72,7 @@ const Social = styled.div`
         }
 
         &:hover path {
-            fill: #FF7675;
+            fill: #449EC6;
         }
     }
 `
