@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
 const ImageStyled = styled.img`
-    box-shadow: 35px 35px 0 #FF7675;
+    box-shadow: 35px 35px 0 #449EC6;
     margin-right: 40px;
     margin-left:10px;
     

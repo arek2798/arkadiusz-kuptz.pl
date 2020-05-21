@@ -58,7 +58,7 @@ const NavItem = styled.li`
         display: block;
         width: 0;
         height: 2px;
-        background: #FF7675;
+        background: #449EC6;
         position: absolute;
         bottom: 0;
         left: 50%;
