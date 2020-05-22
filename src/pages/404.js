@@ -1,10 +1,25 @@
 import React from "react"
+import styled from 'styled-components';
+import Footer from '../components/sections/Footer/Footer';
+
+const Wrapper = styled.main`
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto max-content;
+`
+const Content = styled.div`
+  text-align: center;
+  margin: 150px 0 50px;
+`
 
 const NotFoundPage = () => (
-  <>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </>
+  <Wrapper>
+    <Content>
+      <h1>Strona nie istnieje!</h1>
+      <p>Spróbuj wyszukać coś innego lub przejdź do <a href="https://www.arkadiusz-kuptz.pl">strony głównej</a>.</p>
+    </Content>
+    <Footer />
+  </Wrapper>
 )
 
 export default NotFoundPage
