@@ -7,6 +7,15 @@ import Helmet from 'react-helmet';
 const MainLayout = ({ children }) => (
     <>
         <Helmet>
+            {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNQ5PKH19B"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments)}
+                gtag('js', new Date());
+
+                gtag('config', 'G-GNQ5PKH19B');
+            </script>
             <meta charSet="utf-8" />
             <title>Arkadiusz Kuptz</title>
             <link rel="icon" href={favicon} />
