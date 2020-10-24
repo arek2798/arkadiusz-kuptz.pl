@@ -43,7 +43,7 @@ class Portfolio extends React.Component {
                 <SectionHeader title="Portfolio" subtitle="WYKONANE PRACE" />
                 <Filter>
                     <Item active={activeFilter === "wszystko" ? true : false} onClick={() => this.handleFilter("wszystko")}>Wszystko</Item>
-                    <Item active={activeFilter === "portfolio" ? true : false} onClick={() => this.handleFilter("portfolio")}>Strona portfolio</Item>
+                    <Item active={activeFilter === "portfolio" ? true : false} onClick={() => this.handleFilter("portfolio")}>Portfolio</Item>
                     <Item active={activeFilter === "aplikacja" ? true : false} onClick={() => this.handleFilter("aplikacja")}>Aplikacja webowa</Item>
                     <Item active={activeFilter === "firmowa" ? true : false} onClick={() => this.handleFilter("firmowa")}>Strona firmowa</Item>
                 </Filter>
