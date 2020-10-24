@@ -11,6 +11,12 @@ module.exports = {
     `gatsby-plugin-layout`,
     `gatsby-plugin-smoothscroll`,
     {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `G-GNQ5PKH19B`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
