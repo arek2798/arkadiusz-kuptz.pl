@@ -11,9 +11,11 @@ module.exports = {
     `gatsby-plugin-layout`,
     `gatsby-plugin-smoothscroll`,
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GTAG_ID,
+        head: true,
+        anonymize: true
       },
     },
     {
