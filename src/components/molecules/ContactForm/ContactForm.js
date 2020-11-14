@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../../atoms/Button/Button';
 import emailjs from 'emailjs-com';
+import Modal from '../modal/modal';
 
 const Form = styled.form`
     display: grid;
@@ -26,13 +27,24 @@ const Textarea = styled.textarea`
     background: #FFFFFF;
     padding: 14px;
 `
+const ModalInfo = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2em;
+`
 
 class ContactForm extends React.Component {
     state = {
         name: "",
         email: "",
         content: "",
-        correct: false
+        correct: false,
+        modalIsOpen: false,
+        sendCorrect: null
     }
 
     handleCorrect = () => {
@@ -67,9 +79,11 @@ class ContactForm extends React.Component {
                 .then(
                     (response) => {
                         console.log("SUCCESS!", response.status, response.text);
+                        this.setState({ sendCorrect: true })
                     },
                     (err) => {
                         console.log("FAILURE!", err);
+                        this.setState({ sendCorrect: false })
                     }
                 );
 
@@ -77,20 +91,34 @@ class ContactForm extends React.Component {
                 name: "",
                 email: "",
                 content: "",
-                correct: false
+                correct: false,
+                modalIsOpen: true,
+                sendCorrect: null
             })
         }
+    }
+
+    closeModal = () => {
+        this.setState({ modalIsOpen: false })
     }
 
     render() {
 
         return (
-            <Form autoComplete="off" >
-                <Input name="name" type="name" placeholder="Twoje imię..." required onChange={this.handleText} value={this.state.name} />
-                <Input name="email" type="email" placeholder="Twój email..." required onChange={this.handleText} value={this.state.email} />
-                <Textarea name="content" placeholder="Treść wiadomości..." required onChange={this.handleText} value={this.state.content} />
-                <Button disable={this.state.correct ? false : true} type="submit" onClick={this.handleSubmit}>Wyślij</Button>
-            </Form>
+            <>
+                <Modal isOpen={this.state.modalIsOpen && this.state.sendCorrect !== null}>
+                    <ModalInfo >
+                        {this.state.sendCorrect ? <p>Twoja wiadomość została wysłana!</p> : <p>Wystąpił błąd podczas wysylania!</p>}
+                        <Button onClick={this.closeModal}>Ok</Button>
+                    </ModalInfo>
+                </Modal>
+                <Form autoComplete="off" >
+                    <Input name="name" type="name" placeholder="Twoje imię..." required onChange={this.handleText} value={this.state.name} />
+                    <Input name="email" type="email" placeholder="Twój email..." required onChange={this.handleText} value={this.state.email} />
+                    <Textarea name="content" placeholder="Treść wiadomości..." required onChange={this.handleText} value={this.state.content} />
+                    <Button disable={this.state.correct ? false : true} type="submit" onClick={this.handleSubmit}>Wyślij</Button>
+                </Form>
+            </>
         )
     }
 }
