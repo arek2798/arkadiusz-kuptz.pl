@@ -26,6 +26,7 @@ const Textarea = styled.textarea`
     border: 1px solid #888888;
     background: #FFFFFF;
     padding: 14px;
+    resize: none; 
 `
 const ModalInfo = styled.div`
     width: 100%;
