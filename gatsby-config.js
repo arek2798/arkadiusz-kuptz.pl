@@ -28,21 +28,18 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
             family: `Roboto`,
-            subsets: [`latin-ext`],
-            variants: ['400', '500', '700']
+            weights: ['400', '500', '700']
           },
           {
             family: `Poppins`,
-            subsets: [`latin-ext`],
             variants: ['400', '500', '700']
           },
         ],
-        display: 'swap'
       },
     },
     {
