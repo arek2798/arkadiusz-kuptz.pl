@@ -42,6 +42,7 @@ module.exports = {
             variants: ['400', '500', '700']
           },
         ],
+        display: 'swap'
       },
     },
     {
