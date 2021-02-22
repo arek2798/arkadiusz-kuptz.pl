@@ -1,17 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useWindowWidth } from '../../hooks/hooks';
 import WorkField from '../../atoms/WorkField/WorkField';
 
 const FieldsWrapper = styled.div`
     padding: 60px 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-start;
+    transition: transform 0.5s ease-in-out;
+    transform: ${({ margin }) => css`translateX(${margin + "px"})`};
 
     @media (max-width: 1170px) {
-        justify-content: space-around;
+        padding: 20px 0;
     }
+
 `
 
 export const query = graphql`
@@ -23,6 +26,7 @@ export const query = graphql`
         technologies
         link
         projectType
+        description
         thumb {
             fixed(height: 600, width: 700) {
                 src
@@ -33,13 +37,22 @@ export const query = graphql`
   }
 `
 
-const ProjectsWrapper = ({ activeFilter }) => {
+const ProjectsWrapper = ({ activeProject }) => {
   const data = useStaticQuery(query);
-  const activeWorks = data.allDatoCmsPortfolio.nodes.filter(work => work.projectType === activeFilter || activeFilter === "wszystko");
+  const works = data.allDatoCmsPortfolio.nodes
+
+  const width = useWindowWidth();
+
+  let margin = ((width - 1187) / 2) < 0 ? 0 : (width - 1187) / 2;
+  if (width < 750) {
+    margin = (width - 440) / 2;
+  }
+
+  const translate = margin - (activeProject * (width < 750 ? 440 : 750));
 
   return (
-    <FieldsWrapper>
-      {activeWorks.map(work => <a href={work.link} target="_blank" rel="noopener noreferrer" key={work.id}><WorkField src={work.thumb.fixed.src} title={work.projectTitle} tech={work.technologies} /></a>)}
+    <FieldsWrapper margin={translate}>
+      {works.map((work, index) => <WorkField key={index} index={index} src={work.thumb.fixed.src} title={work.projectTitle} tech={work.technologies} link={work.link} desc={work.description} />)}
     </FieldsWrapper >
   )
 }
