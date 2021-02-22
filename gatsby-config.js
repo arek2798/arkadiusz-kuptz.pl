@@ -49,6 +49,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.arkadiusz-kuptz.pl/',
+        policy: [{ userAgent: 'Googlebot-Image', disallow: '/' }]
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
